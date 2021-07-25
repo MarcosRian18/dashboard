@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      ,
+      maximum-scale="1"
+    />
+    <title>DataVisiooh admin</title>
+    <!--Inclusão do style css-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--Inclusão do line-awesomes-->
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <!--Inclusão da llib Chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <!--Inicio Body-->
+  <body>
+    <input type="checkbox" id="nav-toogle" />
+    <div class="side-bar">
+      <!--Inicio Barra Lateral Esquerda-->
+      <div class="sidebar-brand">
+        <!--Inicio Logo e Marca-->
+        <h2>
+          <img
+            style="
+              margin-left: 5px;
+              margin-top: 10px;
+              width: 40px;
+              height: 40px;
+              background: aqua;
+              border-radius: 10px;
+            "
+            src="img/crescente-estoque-grafico-de-barras.png"
+            alt=""
+          />
+          <span class="top">DataVisiooh</span>
+        </h2>
+      </div>
+      <!--Fim Logo e Marca-->
+
+      <div class="sidebar-menu">
+        <!--Inicio Barra Lateral Menu-->
+        <ul>
+          <li>
+            <a href="" class="active">
+              <span class="las la-igloo"></span> <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-users"></span> <span>Clientes</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-clipboard-list"></span>
+              <span>Projetos</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-shopping-bag"></span> <span>Ordens</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-receipt"></span> <span>Inventário</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-user-circle"></span> <span>Contas</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="las la-clipboard-list"></span> <span>Tasks</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--Fim Barra Lateral Menu-->
+    </div>
+    <!--Fim Barra Lateral Esquerda-->
+
+    <div class="main-content">
+      <!--Inicio Contéudo Principal-->
+      <header>
+        <!--Inicio header-->
+        <h2>
+          <label for="nav-toogle">
+            <span class="las la-bars"></span>
+          </label>
+          Dashboard
+        </h2>
+        <div class="search-wrapper">
+          <!--Inicio Pesquisa-->
+          <span class="las la-search"></span>
+          <input type="search" placeholder="Search here" />
+        </div>
+        <!--Fim Pesquisa-->
+
+        <div class="user-wrapper">
+          <!--Inicio user admin-->
+          <img
+            src="img/Captura de tela 2021-06-22 235911.png"
+            width="40px"
+            alt=""
+          />
+          <div>
+            <h4>Marcos Rian</h4>
+            <small>Admin</small>
+          </div>
+        </div>
+        <!--Fim user admin-->
+      </header>
+      <!--Fim header-->
+
+      <main>
+        <!--Inicio Principal-->
+        <div class="cards">
+          <!--Inicio de Blocos-->
+          <div class="card-single">
+            <!--Inicio Blocos Únicos-->
+            <div>
+              <h1>54</h1>
+              <span>Clientes</span>
+            </div>
+            <div>
+              <span class="las la-users"></span>
+            </div>
+          </div>
+          <!--Fim Blocos Unicos-->
+          <div class="card-single">
+            <div>
+              <h1>79</h1>
+              <span>Projetos</span>
+            </div>
+            <div>
+              <span class="las la-clipboard-list"></span>
+            </div>
+          </div>
+
+          <div class="card-single">
+            <div>
+              <h1>124</h1>
+              <span>Ordens</span>
+            </div>
+            <div>
+              <span class="las la-shopping-bag"></span>
+            </div>
+          </div>
+
+          <div class="card-single">
+            <div>
+              <h1>$6k</h1>
+              <span>Income</span>
+            </div>
+            <div>
+              <span class="lab la-google-wallet"></span>
+            </div>
+          </div>
+        </div>
+        <!--Fim Bloco -->
+
+        <!--ChartJS_ Gráficos-->
+        <div class="main-container">
+          <div class="chart-container">
+            <h4 class="circle-center">Projetos</h4>
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <div class="chart-container2">
+            <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+        <!--Fim ChartJS-->
+
+        <div class="recent-grid">
+          <!--Inicio Grid-->
+          <div class="projetos">
+            <div class="card">
+              <div class="card-header">
+                <h3>Projetos Recentes</h3>
+
+                <button>
+                  Vejam todos <span class="las la-arrow-right"></span>
+                </button>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <!--Inicio Table -->
+                  <table width="100%">
+                    <thead>
+                      <tr>
+                        <td>Projeto Titlte</td>
+                        <td>Departamento</td>
+                        <td>Status</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!--Inicio tbody-->
+                      <tr>
+                        <td>UI /Ux Design</td>
+                        <td>UI Team</td>
+                        <td><span class="status purple"></span> review</td>
+                      </tr>
+
+                      <tr>
+                        <td>Desenvolvedor Web</td>
+                        <td>Front End</td>
+                        <td><span class="status pink"></span> in progress</td>
+                      </tr>
+                      <tr>
+                        <td>React App</td>
+                        <td>Mobile Team</td>
+                        <td><span class="status orange"></span> pending</td>
+                      </tr>
+
+                      <tr>
+                        <td>UI /Ux Design</td>
+                        <td>UI Team</td>
+                        <td><span class="status purple"></span> review</td>
+                      </tr>
+
+                      <tr>
+                        <td>Desenvolvedor Web</td>
+                        <td>Front End</td>
+                        <td><span class="status pink"></span> in progress</td>
+                      </tr>
+                      <tr>
+                        <td>React App</td>
+                        <td>Mobile Team</td>
+                        <td><span class="status orange"></span> pending</td>
+                      </tr>
+
+                      <tr>
+                        <td>UI /Ux Design</td>
+                        <td>UI Team</td>
+                        <td><span class="status purple"></span> review</td>
+                      </tr>
+
+                      <tr>
+                        <td>Desenvolvedor Web</td>
+                        <td>Front End</td>
+                        <td><span class="status pink"></span> in progress</td>
+                      </tr>
+                      <tr>
+                        <td>React App</td>
+                        <td>Mobile Team</td>
+                        <td><span class="status orange"></span> pending</td>
+                      </tr>
+
+                      <tr>
+                        <td>UI /Ux Design</td>
+                        <td>UI Team</td>
+                        <td><span class="status purple"></span> review</td>
+                      </tr>
+
+                      <tr>
+                        <td>Desenvolvedor Web</td>
+                        <td>Front End</td>
+                        <td><span class="status pink"></span> in progress</td>
+                      </tr>
+                      <tr>
+                        <td>React App</td>
+                        <td>Mobile Team</td>
+                        <td><span class="status orange"></span> pending</td>
+                      </tr>
+                    </tbody>
+                    <!--Fim tbody -->
+                  </table>
+                  <!--Fim table -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="customers">
+            <!--Inicio Customers-->
+            <div class="card">
+              <div class="card-header">
+                <h3>New customer</h3>
+
+                <button>
+                  Veja Todos <span class="las la-arrow-right"></span>
+                </button>
+              </div>
+              <div class="card-body">
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+
+                <div class="customer">
+                  <div class="info">
+                    <img
+                      src="img/Captura de tela 2021-06-22 235911.png"
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                    <div>
+                      <h4>Lewis S. cunningham</h4>
+                      <small>CEO Excerpt</small>
+                    </div>
+                  </div>
+
+                  <div class="contact">
+                    <span class="las la-user-circle"></span>
+                    <span class="las la-comment"></span>
+                    <span class="las la-phone"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Fim customers -->
+        </div>
+        <!--Fim Grid -->
+      </main>
+      <!--Fim Principal-->
+    </div>
+    <!--Fim Contéudo Principal-->
+    <script src="script.js"></script>
+  </body>
+  <!--Fim Body-->
+</html>
